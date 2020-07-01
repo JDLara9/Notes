@@ -1,55 +1,40 @@
-from tkinter import *
+import tkinter as tk
+from tkinter import messagebox
+import sys
 
-gui = Tk(className = 'Notes')
-gui.geometry("800x685")
-gui['background']='#1e2024'
+# We can make a default font to be used here or be able to change it later
+# by going to settings in future sprint
+DEFAULT_FONT = ('Verdana', 12)
 
+class App:
+    def __init__(self):
+        self.root_window = tk.Tk(className = 'Notes')
+        self.root_window.geometry("800x685")
+        self.root_window['background']='#1e2024'
+        self.show()
 
-"""
-label_1 = Label(gui, text="Name:")
-label_2 = Label(gui, text="Password:")
-entry_1 = Entry(gui)
-entry_2 = Entry(gui)
-
-label_1.grid(row=0, sticky=E)
-label_2.grid(row=1, sticky=E)
-entry_1.grid(row=0, column=1)
-entry_2.grid(row=1, column=1)
-
-c = Checkbutton(gui, text="Keep me logged in")
-c.grid(columnspan=2)
-"""
-
-"""topFrame = Frame(gui)
-topFrame.pack()
-bottomFrame = Frame(gui)
-bottomFrame.pack(side=BOTTOM)"""
+    def show(self):
+        topFrame = tk.Frame(self.root_window)
+        topFrame.pack()
+        bottomFrame = tk.Frame(self.root_window)
+        bottomFrame.pack(side=tk.BOTTOM)
 
 
+        #To create buttons
+        button1 = tk.Button(topFrame, text="Save", fg = "red")
+        button2 = tk.Button(topFrame, text="Open", fg = "blue")
+        button3 = tk.Button(topFrame, text="Button 3", fg = "green")
+        button4 = tk.Button(topFrame, text="Button 4", fg = "yellow")
 
-#Create labels like in a graph
-"""
-one = Label(gui, text="One", bg="red", fg="white")
-one.pack()
-two = Label(gui, text="two", bg="red", fg="white")
-#fill=X makes it scalable along the X axis
-two.pack(fill=X)
-three = Label(gui, text="two", bg="red", fg="white")
-three.pack(side=LEFT, fill=Y)
-"""
+        button1.pack(side=tk.LEFT)
+        button2.pack(side=tk.LEFT)
+        button3.pack(side=tk.LEFT)
+        button4.pack(side=tk.LEFT)
 
+        messagebox.showinfo("Welcome to Notes", "Please feel free to type in your credit card information!")
 
-#To create buttons
-"""
-button1 = Button(topFrame, text="Save", fg = "red")
-button2 = Button(topFrame, text="Open", fg = "blue")
-button3 = Button(topFrame, text="Button 3", fg = "green")
-button4 = Button(topFrame, text="Button 4", fg = "yellow")
+    def start(self):
+        self.root_window.mainloop()
 
-button1.pack(side=LEFT)
-button2.pack(side=LEFT)
-button3.pack(side=LEFT)
-button4.pack(side=LEFT)
-"""
-
-gui.mainloop()
+if __name__ == '__main__':
+    App().start()
