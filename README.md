@@ -10,6 +10,8 @@ Project is created with:
 
 ## Setup
 To run this project:
+```
 $ git clone https://github.com/JDLara9/Notes.git
 $ cd Notes
 $ Notes.py
+```
