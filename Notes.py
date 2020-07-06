@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import *
 from tkinter import messagebox
 import sys
 import webbrowser
@@ -47,11 +48,11 @@ class App:
         bottomFrame.pack(side=tk.BOTTOM)
         text = tk.Text(self.root_window, fg = "gray", bg = '#1e2024')
         text.config(font=DEFAULT_FONT, fg='white')
-        text.pack()
+        text.pack(expand=True, fill= BOTH)
 
     def newNote(self):
         # Thinking this opens up another NotePad window
-        messagebox.showwarning('Warning', 'Work in progress...')
+        tk.messagebox.showwarning('Warning', 'Work in progress...')
 
     def openNote(self):
         # This will open an existing note, once we have a DB tho
