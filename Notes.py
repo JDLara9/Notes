@@ -27,9 +27,6 @@ class App:
 
         # Menu for File
         fileMenu = tk.Menu(menuBar, tearoff=0)
-        fileMenu.add_command(label="Sign up", command=self.create)
-        fileMenu.add_command(label="Sign in", command=self.login)
-        fileMenu.add_separator()
         fileMenu.add_command(label="New", command=self.newNote)
         fileMenu.add_command(label="Open", command=self.openNote)
         fileMenu.add_command(label="Save", command=self.saveNote)
@@ -56,17 +53,6 @@ class App:
         text = tk.Text(self.root_window, fg = "gray", bg = '#1e2024')
         text.config(font=DEFAULT_FONT, fg='white')
         text.pack(expand=True, fill= BOTH)
-
-    def create(self):
-        # You can create your db account so you can store notes offline
-        messagebox.showwarning('Warning', 'Work in progress...')
-        conn.execute('INSERT INTO user (username, password) VALUES (?,?)', ("Mario", "note123"))
-        conn.commit()
-        messagebox.showinfo('Database', 'You have created account')
-
-    def login(self):
-        # You can login to your db account so you can store notes offline
-        messagebox.showwarning('Warning', 'Work in progress...')
 
     def newNote(self):
         # Thinking this opens up another NotePad window
